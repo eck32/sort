@@ -61,8 +61,8 @@ window.setImmediate = (function () {
 
     // Linear interpolation with a
     bitmapData[index]     = orgR + a * (r - orgR) * Math.random();
-    bitmapData[index + 1] = orgG + a * (g - orgG);
-    bitmapData[index + 2] = orgB + a * (b - orgB);
+    bitmapData[index + 1] = orgG + a * (g - orgG) * Math.random();
+    bitmapData[index + 2] = orgB + a * (b - orgB) * Math.random();
   }
 
   // Compare the difference between two indexes in the bitmap
