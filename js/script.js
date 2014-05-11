@@ -95,7 +95,7 @@ window.setImmediate = (function () {
 
     // Swap them pixels
     setPixel(targetIndex, bitmapData[sourceIndex], bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2]);
-    setPixel(sourceIndex, oldR, oldG, oldB);
+    setPixel(sourceIndex, oldG, oldR, oldB);
   }
 
   // Do a single iteration
