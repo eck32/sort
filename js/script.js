@@ -84,7 +84,7 @@ window.setImmediate = (function () {
 
   // Compare and recolor two bitmap indices
   function processIndexPair(sourceIndex, targetIndex) {
-    if (!compare(sourceIndex, targetIndex) & Math.random() < 0.25) {
+    if (!compare(sourceIndex, targetIndex) & Math.random() < 0.99) {
       return;
     }
 
