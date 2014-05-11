@@ -84,14 +84,14 @@ window.setImmediate = (function () {
 
   // Compare and recolor two bitmap indices
   function processIndexPair(sourceIndex, targetIndex) {
-    if (!compare(sourceIndex, targetIndex) & Math.random() < 0.99) {
+    if (!compare(sourceIndex, targetIndex)) {
       return;
     }
 
     // Save values before overwriting
     var oldR = bitmapData[targetIndex],
       oldG = bitmapData[targetIndex + 1],
-      oldB = bitmapData[targetIndex + 2];
+      oldB = bitmapData[targetIndex + 3];
 
     // Swap them pixels
     setPixel(targetIndex, bitmapData[sourceIndex], bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2]);
