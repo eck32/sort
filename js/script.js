@@ -89,8 +89,8 @@ window.setImmediate = (function () {
     }
 
     // Save values before overwriting
-    var oldR = bitmapData[targetIndex],
-      oldG = bitmapData[targetIndex + 1],
+    var oldR = bitmapData[targetIndex+1],
+      oldG = bitmapData[targetIndex + 2],
       oldB = bitmapData[targetIndex + 3];
 
     // Swap them pixels
