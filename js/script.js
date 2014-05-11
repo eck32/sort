@@ -60,7 +60,7 @@ window.setImmediate = (function () {
       orgB = bitmapData[index + 2];
 
     // Linear interpolation with a
-    bitmapData[index]     = orgR + a * (r - orgR);
+    bitmapData[index]     = orgR + a * (r - orgR) * Math.random();
     bitmapData[index + 1] = orgG + a * (g - orgG);
     bitmapData[index + 2] = orgB + a * (b - orgB);
   }
@@ -94,8 +94,8 @@ window.setImmediate = (function () {
       oldB = bitmapData[targetIndex + 2];
 
     // Swap them pixels
-    setPixel(targetIndex, bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2], bitmapData[sourceIndex + 0]);
-    setPixel(sourceIndex, oldG, oldR, oldB);
+    setPixel(targetIndex, bitmapData[sourceIndex + 0], bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2]);
+    setPixel(sourceIndex, oldR, oldG, oldB);
   }
 
   // Do a single iteration
