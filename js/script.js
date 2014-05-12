@@ -252,12 +252,11 @@ window.setImmediate = (function () {
   }
   
   $(document).keypress(function(event){
-      alert(String.fromCharCode(event.which)); 
       if(even.which == 'r'){
         redSeed = Math.random();
         greenSeed = Math.random();
         blueSeed = Math.random();
-        start();
+        reload();
       }
     })
 
