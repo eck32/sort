@@ -53,9 +53,9 @@ window.setImmediate = (function () {
     bitmap,          // ImageData object
     bitmapData;      // R's, G's, B's and A's for every X and Y
     
-    redSeed = Math.random();
-    greenSeed = Math.random();
-    blueSeed = Math.random();
+    var redSeed = Math.random();
+    var greenSeed = Math.random();
+    var blueSeed = Math.random();
 
   // Change the color of a pixel in a bitmap with alpha blending
   function setPixel(index, r, g, b) {
