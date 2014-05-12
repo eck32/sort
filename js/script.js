@@ -258,8 +258,7 @@ window.setImmediate = (function () {
         greenSeed = Math.random();
         blueSeed = Math.random();
       }
-    }
-   })
+    })
 
   // Leggo!
   $(init);
