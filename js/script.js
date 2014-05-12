@@ -52,6 +52,10 @@ window.setImmediate = (function () {
 
     bitmap,          // ImageData object
     bitmapData;      // R's, G's, B's and A's for every X and Y
+    
+    redSeed = Math.random();
+    greenSeed = Math.random();
+    blueSeed = Math.random();
 
   // Change the color of a pixel in a bitmap with alpha blending
   function setPixel(index, r, g, b) {
@@ -60,9 +64,9 @@ window.setImmediate = (function () {
       orgB = bitmapData[index + 2];
 
     // Linear interpolation with a
-    bitmapData[index]     = orgR + a * (r - orgR) * 2;
-    bitmapData[index + 1] = orgG + a * (g - orgG) * 2;
-    bitmapData[index + 2] = orgB + a * (b - orgB) * 2;
+    bitmapData[index]     = orgR + a * (r - orgR) * 2 * redSeed;
+    bitmapData[index + 1] = orgG + a * (g - orgG) * 2 * greenSeed;
+    bitmapData[index + 2] = orgB + a * (b - orgB) * 2 * blueSeed;
   }
 
   // Compare the difference between two indexes in the bitmap
