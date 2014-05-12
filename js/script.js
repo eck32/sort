@@ -250,6 +250,10 @@ window.setImmediate = (function () {
     // On resize: reload(). Now: reload()
     $(window).resize(reload).resize();
   }
+  
+  $(document).keypress(function(event){
+    alert(String.fromCharCode(event.which)); 
+   })
 
   // Leggo!
   $(init);
