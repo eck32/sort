@@ -257,7 +257,7 @@ window.setImmediate = (function () {
         redSeed = Math.random();
         greenSeed = Math.random();
         blueSeed = Math.random();
-        reload();
+        start();
       }
     })
 
