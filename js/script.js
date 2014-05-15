@@ -6,6 +6,10 @@ var config = {
   threshold: 0.45,
   scale:     1,
   vertical:  true
+  
+  var redSeed = Math.random();
+  var greenSeed = Math.random();
+  var blueSeed = Math.random();
 };
 
 // shim layer with setTimeout fallback
@@ -53,9 +57,7 @@ window.setImmediate = (function () {
     bitmap,          // ImageData object
     bitmapData;      // R's, G's, B's and A's for every X and Y
     
-    var redSeed = Math.random();
-    var greenSeed = Math.random();
-    var blueSeed = Math.random();
+   
 
   // Change the color of a pixel in a bitmap with alpha blending
   function setPixel(index, r, g, b) {
@@ -195,6 +197,9 @@ window.setImmediate = (function () {
     gui.add(config, 'strength', 0, 1).onFinishChange(reload);
     gui.add(config, 'threshold', -1, 1).onFinishChange(reload);
     gui.add(config, 'vertical').onFinishChange(reload);
+    gui.add(config, 'redSeed').onFinishChange(reload);
+    gui.add(config, 'greenSeed').onFinishChange(reload);
+    gui.add(config, 'blueSeed').onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
