@@ -5,11 +5,11 @@ var config = {
   strength:  0.75,
   threshold: 0.45,
   scale:     1,
-  vertical:  true
+  vertical:  true,
   
-  redSeed = Math.random();
-  greenSeed = Math.random();
-  blueSeed = Math.random();
+  redSeed = Math.random(),
+  greenSeed = Math.random(),
+  blueSeed = Math.random(),
 };
 
 // shim layer with setTimeout fallback
@@ -197,9 +197,9 @@ window.setImmediate = (function () {
     gui.add(config, 'strength', 0, 1).onFinishChange(reload);
     gui.add(config, 'threshold', -1, 1).onFinishChange(reload);
     gui.add(config, 'vertical').onFinishChange(reload);
-    gui.add(config, 'redSeed').onFinishChange(reload);
-    gui.add(config, 'greenSeed').onFinishChange(reload);
-    gui.add(config, 'blueSeed').onFinishChange(reload);
+    gui.add(config, 'redSeed', 0, 1).onFinishChange(reload);
+    gui.add(config, 'greenSeed', 0, 1).onFinishChange(reload);
+    gui.add(config, 'blueSeed', 0, 1).onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
