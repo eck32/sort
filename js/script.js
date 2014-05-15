@@ -197,9 +197,9 @@ window.setImmediate = (function () {
     gui.add(config, 'strength', 0, 1).onFinishChange(reload);
     gui.add(config, 'threshold', -1, 1).onFinishChange(reload);
     gui.add(config, 'vertical').onFinishChange(reload);
-    gui.add(config, 'redSeed', 0, 1).onFinishChange(reload);
-    gui.add(config, 'greenSeed', 0, 1).onFinishChange(reload);
-    gui.add(config, 'blueSeed', 0, 1).onFinishChange(reload);
+    gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
+    gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
+    gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
