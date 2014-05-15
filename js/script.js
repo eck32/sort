@@ -7,9 +7,9 @@ var config = {
   scale:     1,
   vertical:  true,
   
-  redSeed = Math.random(),
-  greenSeed = Math.random(),
-  blueSeed = Math.random(),
+  redSeed: Math.random(),
+  greenSeed: Math.random(),
+  blueSeed: Math.random(),
 };
 
 // shim layer with setTimeout fallback
