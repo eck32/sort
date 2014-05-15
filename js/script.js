@@ -66,9 +66,9 @@ window.setImmediate = (function () {
       orgB = bitmapData[index + 2];
 
     // Linear interpolation with a
-    bitmapData[index]     = orgR + a * (r - orgR) * 2 * redSeed;
-    bitmapData[index + 1] = orgG + a * (g - orgG) * 2 * greenSeed;
-    bitmapData[index + 2] = orgB + a * (b - orgB) * 2 * blueSeed;
+    bitmapData[index]     = orgR + a * (r - orgR) * 2 * config.redSeed;
+    bitmapData[index + 1] = orgG + a * (g - orgG) * 2 * config.greenSeed;
+    bitmapData[index + 2] = orgB + a * (b - orgB) * 2 * config.blueSeed;
   }
 
   // Compare the difference between two indexes in the bitmap
@@ -255,16 +255,6 @@ window.setImmediate = (function () {
     // On resize: reload(). Now: reload()
     $(window).resize(reload).resize();
   }
-  
-  $(document).keypress(function(event){
-      if(even.which == 'r'){
-        redSeed = Math.random();
-        greenSeed = Math.random();
-        blueSeed = Math.random();
-        reload();
-      }
-    })
-
   // Leggo!
   $(init);
 }(jQuery, '#photo'));
