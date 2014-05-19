@@ -11,7 +11,7 @@ var config = {
   greenSeed: Math.random(),
   blueSeed: Math.random(),
   
-  iteration
+  iteration: 0
 };
 
 // shim layer with setTimeout fallback
