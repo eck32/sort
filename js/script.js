@@ -126,8 +126,8 @@ window.setImmediate = (function () {
     }
     
     iterationCounter++;
-    if(iterationCounter%5 = 0 && iterationCounter<100){
-      oldBitmaps[iterationCounter/5] = bitmap; 
+    if(iterationCounter%10 = 0 && iterationCounter<200){
+      oldBitmaps[iterationCounter/10] = bitmap; 
     }
     // Repeat immediately
     window.setImmediate(iterate);
