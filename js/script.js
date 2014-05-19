@@ -10,6 +10,8 @@ var config = {
   redSeed: Math.random(),
   greenSeed: Math.random(),
   blueSeed: Math.random(),
+  
+  iteration
 };
 
 // shim layer with setTimeout fallback
@@ -56,6 +58,9 @@ window.setImmediate = (function () {
 
     bitmap,          // ImageData object
     bitmapData;      // R's, G's, B's and A's for every X and Y
+    
+    var oldBitmaps = new Array();
+    var iterationCounter = 0;
     
    
 
@@ -119,7 +124,12 @@ window.setImmediate = (function () {
         }
       }
     }
-
+    
+    iterationCounter++;
+    if(iterationCounter%5 = 0 && iterationCounter<100){
+      oldBitmaps[iterationCounter/5] = bitmap; 
+    }
+    }
     // Repeat immediately
     window.setImmediate(iterate);
   }
@@ -127,7 +137,7 @@ window.setImmediate = (function () {
   // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    ctx.putImageData(bitmap, 0, 0);
+    ctx.putImageData(oldBitmaps[iteration], 0, 0);
   }
 
   // Start drawing, start moving
@@ -200,6 +210,7 @@ window.setImmediate = (function () {
     gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
+    gui.add(config, 'iteration', 0, 20).onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
