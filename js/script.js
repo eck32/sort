@@ -10,12 +10,7 @@ var config = {
   redSeed: Math.random(),
   greenSeed: Math.random(),
   //blueSeed: Math.random(),
-};
-
-// shim layer with setTimeout fallback
-window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
+tRequestAnimationFrame ||
             window.mozRequestAnimationFrame    ||
             window.oRequestAnimationFrame      ||
             window.msRequestAnimationFrame     ||
