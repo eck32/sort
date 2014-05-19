@@ -5,7 +5,11 @@ var config = {
   strength:  0.75,
   threshold: 0.45,
   scale:     1,
-  vertical:  true
+  vertical:  true,
+  
+  redSeed: Math.random(),
+  greenSeed: Math.random(),
+  blueSeed: Math.random(),
 };
 
 // shim layer with setTimeout fallback
@@ -52,6 +56,8 @@ window.setImmediate = (function () {
 
     bitmap,          // ImageData object
     bitmapData;      // R's, G's, B's and A's for every X and Y
+    
+   
 
   // Change the color of a pixel in a bitmap with alpha blending
   function setPixel(index, r, g, b) {
@@ -60,9 +66,9 @@ window.setImmediate = (function () {
       orgB = bitmapData[index + 2];
 
     // Linear interpolation with a
-    bitmapData[index]     = orgR + a * (r - orgR);
-    bitmapData[index + 1] = orgG + a * (g - orgG);
-    bitmapData[index + 2] = orgB + a * (b - orgB);
+    bitmapData[index]     = orgR + a * (r - orgR) * 2 * config.redSeed;
+    bitmapData[index + 1] = orgG + a * (g - orgG) * 2 * config.greenSeed;
+    bitmapData[index + 2] = orgB + a * (b - orgB) * 2 * config.blueSeed;
   }
 
   // Compare the difference between two indexes in the bitmap
@@ -89,13 +95,13 @@ window.setImmediate = (function () {
     }
 
     // Save values before overwriting
-    var oldR = bitmapData[targetIndex],
-      oldG = bitmapData[targetIndex + 1],
+    var oldR = bitmapData[targetIndex+1],
+      oldG = bitmapData[targetIndex],
       oldB = bitmapData[targetIndex + 2];
 
     // Swap them pixels
-    setPixel(targetIndex, bitmapData[sourceIndex], bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2]);
-    setPixel(sourceIndex, oldG, oldR, oldB);
+    setPixel(targetIndex, bitmapData[sourceIndex + 0], bitmapData[sourceIndex + 1], bitmapData[sourceIndex + 2]);
+    setPixel(sourceIndex, oldR, oldG, oldB);
   }
 
   // Do a single iteration
@@ -191,6 +197,9 @@ window.setImmediate = (function () {
     gui.add(config, 'strength', 0, 1).onFinishChange(reload);
     gui.add(config, 'threshold', -1, 1).onFinishChange(reload);
     gui.add(config, 'vertical').onFinishChange(reload);
+    gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
+    gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
+    gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
@@ -246,7 +255,6 @@ window.setImmediate = (function () {
     // On resize: reload(). Now: reload()
     $(window).resize(reload).resize();
   }
-
   // Leggo!
   $(init);
 }(jQuery, '#photo'));
