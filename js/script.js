@@ -125,7 +125,10 @@ window.setImmediate = (function () {
       }
     }
     iterationCounter++;
-    oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height)
+    if(iterationCounter < 20){
+      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height)
+    }
+    
     // Repeat immediately
     window.setImmediate(iterate);
   }
