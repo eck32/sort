@@ -112,6 +112,7 @@ window.setImmediate = (function () {
   // Do a single iteration
   function iterate() {
     // Loop through all the pixels
+    alert("updated");
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
       for(var columnIndex = rowIndex; columnIndex < maxY; columnIndex += 4) {
@@ -124,7 +125,7 @@ window.setImmediate = (function () {
         }
       }
     }
-    alert("updated");
+    //alert("updated");
     iterationCounter++;
    //if(iterationCounter == 5){
    //   oldBitmaps[iterationCounter/2] = ctx.getImageData(0, 0, width, height)
