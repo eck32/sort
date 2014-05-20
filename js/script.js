@@ -127,7 +127,8 @@ window.setImmediate = (function () {
     
     iterationCounter++;
     if(iterationCounter%10 = 0 && iterationCounter<200){
-      oldBitmaps[iterationCounter/10] = ctx.getImageData(0, 0, width, height); 
+      oldBitmaps[iterationCounter/10] = new Image(); 
+      oldBitmaps[iterationCounter/10] ctx.getImageData(0, 0, width, height)
       alert(oldBitmaps[iterationCounter/10])
     }
     // Repeat immediately
@@ -176,8 +177,8 @@ window.setImmediate = (function () {
 
     // Get the bitmap to paint on
     ctx.drawImage(img, 0, 0, width, height);
-    bitmap = ctx.getImageData(0, 0, width, height);
-    bitmapData = bitmap.data;
+    oldBitmaps[0] = ctx.getImageData(0, 0, width, height);
+    bitmapData = oldBitmaps[0].data;
 
     // Start walking
     start();
