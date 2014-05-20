@@ -127,7 +127,7 @@ window.setImmediate = (function () {
     
     iterationCounter++;
     if(iterationCounter%10 = 0 && iterationCounter<200){
-      oldBitmaps[iterationCounter/10] = bitmap; 
+      oldBitmaps[iterationCounter/10] = ctx.getImageData(0, 0, width, height); 
     }
     // Repeat immediately
     window.setImmediate(iterate);
