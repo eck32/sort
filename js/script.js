@@ -126,7 +126,7 @@ window.setImmediate = (function () {
     }
     
     iterationCounter++;
-    if(iterationCounter%2 == 0 && iterationCounter<20){
+    if(iterationCounter%2 == 0){
       oldBitmaps[iterationCounter/2] = ctx.getImageData(0, 0, width, height)
       alert("updated");
     }
