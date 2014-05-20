@@ -112,7 +112,7 @@ window.setImmediate = (function () {
   // Do a single iteration
   function iterate() {
     // Loop through all the pixels
-    //alert("updated");
+    alert("updated");
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
       for(var columnIndex = rowIndex; columnIndex < maxY; columnIndex += 4) {
@@ -148,7 +148,6 @@ window.setImmediate = (function () {
     }
     running = true;
     draw();
-    alert("updated");
     iterate();
   }
 
