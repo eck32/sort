@@ -126,10 +126,10 @@ window.setImmediate = (function () {
     }
     alert("updated");
     iterationCounter++;
-    if(iterationCounter == 5){
-      oldBitmaps[iterationCounter/2] = ctx.getImageData(0, 0, width, height)
-      alert("updated");
-    }
+   //if(iterationCounter == 5){
+   //   oldBitmaps[iterationCounter/2] = ctx.getImageData(0, 0, width, height)
+      //alert("updated");
+    //}
     // Repeat immediately
     window.setImmediate(iterate);
   }
