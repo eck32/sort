@@ -128,6 +128,7 @@ window.setImmediate = (function () {
     iterationCounter++;
     if(iterationCounter%10 = 0 && iterationCounter<200){
       oldBitmaps[iterationCounter/10] = ctx.getImageData(0, 0, width, height); 
+      alert(oldBitmaps[iterationCounter/10])
     }
     // Repeat immediately
     window.setImmediate(iterate);
@@ -136,7 +137,7 @@ window.setImmediate = (function () {
   // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    ctx.putImageData(oldBitmaps[config.iteration].getImageData(0,0,width,height), 0, 0);
+    ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
   }
 
   // Start drawing, start moving
