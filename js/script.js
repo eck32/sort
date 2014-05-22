@@ -132,13 +132,14 @@ window.setImmediate = (function () {
     }
     
     // Repeat immediately
-    window.setImmediate(iterate);
+   // window.setImmediate(iterate);
   }
 
   // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
+    alert(oldBitmaps[config.iteration]);
   }
 
   // Start drawing, start moving
