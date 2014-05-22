@@ -127,8 +127,7 @@ window.setImmediate = (function () {
     iterationCounter++;
     if(iterationCounter < 20){
       alert(iterationCounter);
-      ctx.drawImage(img, 0, 0, width, height);
-      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
+      oldBitmaps[iterationCounter] = canvas.toDataURL();
     }
     
     // Repeat immediately
