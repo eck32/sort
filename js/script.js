@@ -111,7 +111,6 @@ window.setImmediate = (function () {
 
   // Do a single iteration
   function iterate() {
-    alert(oldBitmaps[iterationCounter]);
     // Loop through all the pixels
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
