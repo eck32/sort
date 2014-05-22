@@ -128,7 +128,7 @@ window.setImmediate = (function () {
     
     if(iterationCounter < 20){
       oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
-      //alert(oldBitmaps[iterationCounter]);
+      alert(oldBitmaps[iterationCounter]);
     }
     
     // Repeat immediately
@@ -139,7 +139,7 @@ window.setImmediate = (function () {
   function draw() {
     window.requestAnimFrame(draw);
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
-    alert(oldBitmaps[config.iteration]);
+    //alert(oldBitmaps[config.iteration]);
   }
 
   // Start drawing, start moving
