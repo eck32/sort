@@ -139,7 +139,7 @@ window.setImmediate = (function () {
   function draw() {
     window.requestAnimFrame(draw);
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
-    //alert(oldBitmaps[config.iteration]);
+    alert(oldBitmaps[config.iteration]);
   }
 
   // Start drawing, start moving
