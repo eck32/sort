@@ -124,11 +124,12 @@ window.setImmediate = (function () {
         }
       }
     }
+    alert(oldBitmaps[iterationCounter]);
     iterationCounter++;
     
     if(iterationCounter < 20){
       oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
-      alert(oldBitmaps[iterationCounter]);
+      //alert(oldBitmaps[iterationCounter]);
     }
     
     // Repeat immediately
