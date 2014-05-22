@@ -126,9 +126,8 @@ window.setImmediate = (function () {
     }
     iterationCounter++;
     if(iterationCounter < 20){
-      alert(iterationCounter);
       oldBitmaps[iterationCounter] = new Image();
-      oldBitmaps[iterationCounter].src = $canvas[0].toDataURL();
+      oldBitmaps[0].src = $canvas[0].toDataURL();
     }
     
     // Repeat immediately
