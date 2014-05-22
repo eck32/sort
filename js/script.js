@@ -139,7 +139,7 @@ window.setImmediate = (function () {
   function draw() {
     window.requestAnimFrame(draw);
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
-    //alert(oldBitmaps[config.iteration]);
+    alert(oldBitmaps[config.iteration]);
   }
 
   // Start drawing, start moving
@@ -180,7 +180,6 @@ window.setImmediate = (function () {
     ctx.drawImage(img, 0, 0, width, height);
     oldBitmaps[0] = ctx.getImageData(0, 0, width, height);
     bitmapData = oldBitmaps[0].data;
-    alert("yeah");
 
     // Start walking
     start();
