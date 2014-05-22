@@ -128,7 +128,7 @@ window.setImmediate = (function () {
     if(iterationCounter < 20){
       alert(iterationCounter);
       oldBitmaps[iterationCounter] = new Image();
-      oldBitmaps[iterationCounter] = $canvas[0].toDataURL();
+      oldBitmaps[iterationCounter].src = $canvas[0].toDataURL();
     }
     
     // Repeat immediately
