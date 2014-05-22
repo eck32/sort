@@ -151,6 +151,7 @@ window.setImmediate = (function () {
     running = true;
     draw();
     iterate();
+    alert(oldBitmaps[iterationCounter]);
   }
 
   // When image data is loaded
