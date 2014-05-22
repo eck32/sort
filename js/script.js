@@ -149,9 +149,9 @@ window.setImmediate = (function () {
       return;
     }
     running = true;
+    alert(1);
     draw();
     iterate();
-    alert(oldBitmaps[iterationCounter]);
   }
 
   // When image data is loaded
