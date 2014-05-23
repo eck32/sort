@@ -124,7 +124,7 @@ window.setImmediate = (function () {
         }
       }
     }
-    alert(oldBitmaps[iterationCounter]);
+    //alert(oldBitmaps[iterationCounter]);
     iterationCounter++;
     
     if(iterationCounter < 20){
@@ -149,7 +149,6 @@ window.setImmediate = (function () {
       return;
     }
     running = true;
-    alert("1");
     draw();
     iterate();
   }
