@@ -112,6 +112,13 @@ window.setImmediate = (function () {
   // Do a single iteration
   function iterate() {
     // Loop through all the pixels
+    iterationCounter++;
+    
+    if(iterationCounter < 20){
+      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
+      alert(oldBitmaps[iterationCounter]);
+    }
+    
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
       for(var columnIndex = rowIndex; columnIndex < maxY; columnIndex += 4) {
@@ -125,12 +132,7 @@ window.setImmediate = (function () {
       }
     }
     //alert(oldBitmaps[iterationCounter]);
-    iterationCounter++;
     
-    if(iterationCounter < 20){
-      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
-      alert(oldBitmaps[iterationCounter]);
-    }
     
     // Repeat immediately
    window.setImmediate(iterate);
@@ -144,7 +146,7 @@ window.setImmediate = (function () {
 
   // Start drawing, start moving
   function start() {
-    alert("updated 1");
+    alert("updated 2");
     if (running) {
       return;
     }
