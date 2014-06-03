@@ -145,6 +145,7 @@ window.setImmediate = (function () {
 
   // Start drawing, start moving
   function start() {
+    alert("updated 0");
     if (running) {
       return;
     }
