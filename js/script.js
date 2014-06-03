@@ -115,7 +115,7 @@ window.setImmediate = (function () {
     iterationCounter++;
     
     if(iterationCounter < 20){
-      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
+      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
     }
     
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
