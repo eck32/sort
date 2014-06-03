@@ -114,11 +114,6 @@ window.setImmediate = (function () {
     // Loop through all the pixels
     iterationCounter++;
     
-    if(iterationCounter < 20){
-      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
-      
-    }
-    
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
       for(var columnIndex = rowIndex; columnIndex < maxY; columnIndex += 4) {
@@ -131,8 +126,9 @@ window.setImmediate = (function () {
         }
       }
     }
-    oldBitmaps[0] = bitmapData;
-    
+
+  oldBitmaps[config.iteration] = canvas.getImageData(0,0,height,width);
+
     if(iterationCounter < 20){
       open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
       
