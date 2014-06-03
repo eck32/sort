@@ -129,23 +129,22 @@ window.setImmediate = (function () {
     
     if(iterationCounter < 20){
       oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
-      //alert(oldBitmaps[iterationCounter]);
+      alert(oldBitmaps[iterationCounter]);
     }
     
     // Repeat immediately
    window.setImmediate(iterate);
   }
 
-  // Copy the latest bitmap to the canvas every frame
+  // Copy the  bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    canvas.putImageData(oldBitmaps[config.iteration], 0, 0);
-    //alert(oldBitmaps[config.iteration]);
+    ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
   }
 
   // Start drawing, start moving
   function start() {
-    alert("updated 0");
+    alert("updated 1");
     if (running) {
       return;
     }
