@@ -140,7 +140,7 @@ window.setImmediate = (function () {
   // Copy the  bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    oldBitmaps[config.iteration] = ctx.getImageData();
+    oldBitmaps[config.iteration] = ctx.getImageData(0, 0, width, height);
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
   }
 
