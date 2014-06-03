@@ -127,7 +127,7 @@ window.setImmediate = (function () {
       }
     }
 
-  oldBitmaps[config.iteration] = canvas.getImageData(0,0,height,width);
+  oldBitmaps[config.iteration] = ctx.getImageData(0,0,height,width);
 
     if(iterationCounter < 20){
       open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
