@@ -253,7 +253,7 @@ window.setImmediate = (function () {
 
   // Open canvas as img
   function clicked() {
-    window.open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+    open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
   }
 
   function init() {
