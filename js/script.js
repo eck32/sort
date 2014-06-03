@@ -116,6 +116,7 @@ window.setImmediate = (function () {
     
     if(iterationCounter < 20){
       open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+      
     }
     
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
@@ -252,7 +253,7 @@ window.setImmediate = (function () {
 
   // Open canvas as img
   function clicked() {
-    open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+    window.open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
   }
 
   function init() {
