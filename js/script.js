@@ -131,6 +131,12 @@ window.setImmediate = (function () {
         }
       }
     }
+    oldBitmaps[0] = bitmapData;
+    
+    if(iterationCounter < 20){
+      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+      
+    }
     //alert(oldBitmaps[iterationCounter]);
     
     
