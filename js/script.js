@@ -201,7 +201,7 @@ window.setImmediate = (function () {
     img.onload = imageReady;
     img.src = src;
     
-    alert("updated 4");
+    alert("updated 5");
   }
 
   // Adds controls
@@ -216,7 +216,7 @@ window.setImmediate = (function () {
     gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
-    gui.add(config, 'iteration', 0, 20).onFinishChange(reload);
+    gui.add(config, 'iteration', 0, 20).onFinishChange(draw);
 
     $('#controls').on('click', function () {
       gui.open();
