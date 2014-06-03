@@ -116,7 +116,6 @@ window.setImmediate = (function () {
     
     if(iterationCounter < 20){
       oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
-      alert(oldBitmaps[iterationCounter]);
     }
     
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
@@ -141,12 +140,13 @@ window.setImmediate = (function () {
   // Copy the  bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
+    oldBitmaps[config.iteration] = ctx.getImageData();
     ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
   }
 
   // Start drawing, start moving
   function start() {
-    alert("updated 2");
+    alert("updated 3");
     if (running) {
       return;
     }
