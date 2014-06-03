@@ -145,7 +145,7 @@ window.setImmediate = (function () {
 
   // Start drawing, start moving
   function start() {
-    alert("updated 3");
+    
     if (running) {
       return;
     }
@@ -200,6 +200,8 @@ window.setImmediate = (function () {
     img = new Image();
     img.onload = imageReady;
     img.src = src;
+    
+    alert("updated 4");
   }
 
   // Adds controls
