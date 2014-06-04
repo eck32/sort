@@ -112,8 +112,6 @@ window.setImmediate = (function () {
   // Do a single iteration
   function iterate() {
     // Loop through all the pixels
-    iterationCounter++;
-    
     for(var rowIndex = 0; rowIndex < maxRow; rowIndex += rowWidth) {
       var maxY = rowIndex + maxColumn;
       for(var columnIndex = rowIndex; columnIndex < maxY; columnIndex += 4) {
@@ -126,29 +124,27 @@ window.setImmediate = (function () {
         }
       }
     }
-
-  oldBitmaps[config.iteration] = ctx.getImageData(0,0,height,width);
-
-    if(iterationCounter < 20){
-      //open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
-      
-    }
     //alert(oldBitmaps[iterationCounter]);
+    iterationCounter++;
     
+    if(iterationCounter < 20){
+      oldBitmaps[iterationCounter] = ctx.getImageData(0, 0, width, height);
+      //alert(oldBitmaps[iterationCounter]);
+    }
     
     // Repeat immediately
    window.setImmediate(iterate);
   }
 
-  // Copy the  bitmap to the canvas every frame
+  // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
+    canvas.putImageData(oldBitmaps[config.iteration], 0, 0);
+    //alert(oldBitmaps[config.iteration]);
   }
 
   // Start drawing, start moving
   function start() {
-    
     if (running) {
       return;
     }
@@ -203,8 +199,6 @@ window.setImmediate = (function () {
     img = new Image();
     img.onload = imageReady;
     img.src = src;
-    
-    alert("updated 5");
   }
 
   // Adds controls
@@ -219,7 +213,7 @@ window.setImmediate = (function () {
     gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
-    gui.add(config, 'iteration', 0, 20).onFinishChange(draw);
+    gui.add(config, 'iteration', 0, 20).onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
