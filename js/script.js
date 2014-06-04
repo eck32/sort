@@ -14,7 +14,7 @@ var config = {
   iterate: function(){ 
     alert("ITERATING!");
     iterationCounter = 0;
-    }
+  }
 };
 
 // shim layer with setTimeout fallback
@@ -63,7 +63,7 @@ window.setImmediate = (function () {
     bitmapData;      // R's, G's, B's and A's for every X and Y
     
     var oldBitmaps = new Array();
-    var iterationCounter = 0;
+    var iterationCounter = 20;
     
    
 
@@ -131,6 +131,7 @@ window.setImmediate = (function () {
     iterationCounter++;
     
     if(iterationCounter < 20){
+      alert("it counter<20");
       open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>', '_blank');
     }
     
