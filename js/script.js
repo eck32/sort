@@ -13,7 +13,7 @@ var config = {
   blueSeed: Math.random(),
   
   iterate: function(){ 
-    reload();
+    //reload();
     iterationCounter = 0;
   }
 };
@@ -216,7 +216,7 @@ window.setImmediate = (function () {
     gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
-    gui.add(config, 'iterate');
+    gui.add(config, 'iterate').onFinishChange(reload);
 
     $('#controls').on('click', function () {
       gui.open();
