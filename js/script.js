@@ -1,4 +1,5 @@
 /* global dat, jQuery */
+var iterationCounter = 20;
 
 // Configuration stuff, settable with dat.Gui
 var config = {
@@ -63,7 +64,7 @@ window.setImmediate = (function () {
     bitmapData;      // R's, G's, B's and A's for every X and Y
     
     var oldBitmaps = new Array();
-    var iterationCounter = 20;
+    
     
    
 
