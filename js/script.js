@@ -131,9 +131,8 @@ window.setImmediate = (function () {
     //alert(oldBitmaps[iterationCounter]);
     iterationCounter++;
     
-    if(iterationCounter < 20){
-      alert("it counter<20");
-      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>', '_blank');
+    if(iterationCounter < 10){
+      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
     }
     
     // Repeat immediately
