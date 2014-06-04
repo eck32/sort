@@ -128,7 +128,7 @@ window.setImmediate = (function () {
     iterationCounter++;
     
     if(iterationCounter < 20){
-      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>', '_blank');
     }
     
     // Repeat immediately
