@@ -11,7 +11,7 @@ var config = {
   greenSeed: Math.random(),
   blueSeed: Math.random(),
   
-  iteration: 0
+  iterate: function(){ iterationCounter = 0;}
 };
 
 // shim layer with setTimeout fallback
@@ -138,7 +138,7 @@ window.setImmediate = (function () {
   // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
+    ctx.putImageData(oldBitmaps[0], 0, 0);
     //alert(oldBitmaps[config.iteration]);
   }
 
@@ -212,7 +212,7 @@ window.setImmediate = (function () {
     gui.add(config, 'redSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'greenSeed', 0, 2).onFinishChange(reload);
     gui.add(config, 'blueSeed', 0, 2).onFinishChange(reload);
-    gui.add(config, 'iteration', 0, 20).onFinishChange(reload);
+    gui.add(config, 'iterate');
 
     $('#controls').on('click', function () {
       gui.open();
