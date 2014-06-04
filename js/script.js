@@ -130,7 +130,7 @@ window.setImmediate = (function () {
   oldBitmaps[config.iteration] = ctx.getImageData(0,0,height,width);
 
     if(iterationCounter < 20){
-      open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
+      //open().document.write('<img src="'+$canvas[0].toDataURL()+'"/>');
       
     }
     //alert(oldBitmaps[iterationCounter]);
