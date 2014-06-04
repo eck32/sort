@@ -13,7 +13,7 @@ var config = {
   blueSeed: Math.random(),
   
   iterate: function(){ 
-    alert("ITERATING!");
+    reload();
     iterationCounter = 0;
   }
 };
