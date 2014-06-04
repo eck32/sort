@@ -139,7 +139,7 @@ window.setImmediate = (function () {
   // Copy the latest bitmap to the canvas every frame
   function draw() {
     window.requestAnimFrame(draw);
-    canvas.putImageData(oldBitmaps[config.iteration], 0, 0);
+    ctx.putImageData(oldBitmaps[config.iteration], 0, 0);
     //alert(oldBitmaps[config.iteration]);
   }
 
