@@ -60,7 +60,7 @@ window.setImmediate = (function () {
     bitmapData;      // R's, G's, B's and A's for every X and Y
     
     var oldBitmaps = new Array();
-    var iterationCounter = 0;
+    var iterationCounter = 20;
     
    
 
